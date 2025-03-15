@@ -116,7 +116,7 @@ const getPost = async (req, res) => {
     }
 
     await req.redisClient.setex(
-      cachedPost,
+      cachekey,
       3600,
       JSON.stringify(singlePostDetailsbyId)
     );
